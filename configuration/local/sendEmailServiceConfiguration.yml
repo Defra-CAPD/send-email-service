@@ -1,0 +1,31 @@
+http:
+  port: 9003
+  adminPort: 9004
+
+smtpHost: localhost
+smtpPort: 25
+
+healthCheckEmailAddress: HealthServiceCheck@example.com
+applicationVersionFilePath:
+
+logging:
+
+  console:
+     enabled: true
+
+     # Do not display log statements below this threshold to stdout.
+     threshold: ALL
+
+     logFormat: '%date{ISO8601} level=[%level] logger=[%logger] thread=[%thread] message=[%message] %replace(exception=[%xException]){''^exception=\[\]$'',''''}%n%nopex'
+
+  file:
+     enabled: true
+
+     # Do not write log statements below this threshold to the file.
+     threshold: INFO
+
+     currentLogFilename: log/capd-send-email-dropwizard.log
+
+     archive: false
+
+     logFormat: '%date{ISO8601} level=[%level] logger=[%logger] thread=[%thread] message=[%message] %replace(exception=[%xException]){''^exception=\[\]$'',''''}%n%nopex'
